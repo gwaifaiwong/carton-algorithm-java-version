@@ -70,6 +70,10 @@ public class BinaryTreeTraversal {
         inOrderTraversal(node.rightChild);
     }
 
+    /**
+     * 后序遍历
+     * @param node
+     */
     public static void postOrderTraversal(TreeNode node) {
         if (node == null) {
             return;
