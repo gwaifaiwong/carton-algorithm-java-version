@@ -66,7 +66,7 @@ public class PriorityQueue {
         int parentIndex = (childIndex - 1) / 2;
         // temp 保存插入的叶子节点值，用于最后的赋值
         int temp = array[childIndex];
-        while (childIndex > 0 && temp < array[parentIndex]) {
+        while (childIndex > 0 && temp > array[parentIndex]) {
             //无需真正交换，单向赋值即可
             array[childIndex] = array[parentIndex];
             childIndex = parentIndex;
@@ -79,10 +79,10 @@ public class PriorityQueue {
         //temp保存父节点值，用于最后赋值
         int parentIndex = 0;
         int temp = array[parentIndex];
-        int childIndex = 2 * parentIndex + 1;
+        int childIndex = 1;
         while (childIndex < size) {
             //如果有右孩子，且右孩子小于左孩子的值，则定位到右孩子
-            if (childIndex + 1 < size && array[childIndex + 1] < array[childIndex]) {
+            if (childIndex + 1 < size && array[childIndex + 1] > array[childIndex]) {
                 childIndex++;
             }
             //如果父节点小于任何一个孩子的值，直接跳出
