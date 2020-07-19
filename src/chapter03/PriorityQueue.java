@@ -85,7 +85,7 @@ public class PriorityQueue {
             if (childIndex + 1 < size && array[childIndex + 1] > array[childIndex]) {
                 childIndex++;
             }
-            //如果父节点小于任何一个孩子的值，直接跳出
+            //如果父节点大于任何一个孩子的值，直接跳出
             if (temp >= array[childIndex]) {
                 break;
             }
@@ -94,7 +94,7 @@ public class PriorityQueue {
             parentIndex = childIndex;
             childIndex = 2 * childIndex + 1;
         }
-        array[parentIndex] = temp;
+         array[parentIndex] = temp;
     }
 
     public static void main(String[] args) throws Exception {
